@@ -26,5 +26,12 @@ class MainActivity : AppCompatActivity() {
             Log.d("TAG", msg)
             Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
         })
+
+        if (intent.extras != null) {
+            intent?.extras?.keySet()?.forEach {
+                Log.d("TAG", "it: $it")
+                Log.d("TAG", "intent?.extras?.get(it): ${intent?.extras?.get(it)}")
+            }
+        }
     }
 }
